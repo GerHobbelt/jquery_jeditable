@@ -171,7 +171,9 @@
                 }
                                 
                 self.editing    = true;
-                self.revert     = $(self).html();
+                var regex = /<br\s*[\/]?>/gi;
+                var self_revert = $(self).html().replace(regex, "\n");
+                self.revert     = self_revert;
                 $(self).html('');
 
                 /* Create the form object. */
