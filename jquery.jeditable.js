@@ -12,10 +12,16 @@
  * Based on editable by Dylan Verheul <dylan_at_dyve.net>:
  *    http://www.dyve.net/jquery/?editable
  *
+ * This version has been created specifically to use some of the
+ * pending pull requests as well as introduce some needed changes
+ * and cosmetic fixes.
+ * Pull requests that are merged in this version:
+ * https://github.com/tuupola/jquery_jeditable/pull/99
+ * https://github.com/tuupola/jquery_jeditable/pull/36
  */
 
 /**
-  * Version 1.7.2-dev
+  * Version 1.7.3-nimbleapps1
   *
   * ** means there is basic unit tests for this parameter.
   *
