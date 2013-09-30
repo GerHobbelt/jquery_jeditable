@@ -147,7 +147,11 @@
                 if (settings.tooltip) {
                     $(self).removeAttr('title');
                 }
-                
+
+                if (settings.outerclass) {
+                  $(self).addClass(settings.outerclass);
+                }
+
                 /* Figure out how wide and tall we are, saved width and height. */
                 /* Workaround for http://dev.jquery.com/ticket/2190 */
                 if (0 == $(self).width()) {
@@ -364,6 +368,10 @@
                             }
                         }
                     }
+
+                    if ($(self).hasClass(settings.outerclass)) {
+                      $(self).removeClass(settings.outerclass);
+                    }
                     
                     /* Show tooltip again. */
                     $(self).attr('title', settings.tooltip);
@@ -382,6 +390,9 @@
                         self.editing   = false;
                         if (!$.trim($(self).html())) {
                             $(self).html(settings.placeholder);
+                        }
+                        if ($(self).hasClass(settings.outerclass)) {
+                          $(self).removeClass(settings.outerclass);
                         }
                         /* Show tooltip again. */
                         if (settings.tooltip) {
@@ -528,19 +539,20 @@
 
     /* Publicly accessible defaults. */
     $.fn.editable.defaults = {
-        name       : 'value',
-        id         : 'id',
-        type       : 'text',
-        width      : 'auto',
-        height     : 'auto',
-        event      : 'click.editable',
-        onblur     : 'cancel',
-        loadtype   : 'GET',
-        loadtext   : 'Loading...',
-        placeholder: 'Click to edit',
-        loaddata   : {},
-        submitdata : {},
-        ajaxoptions: {}
+        name         : 'value',
+        id           : 'id',
+        type         : 'text',
+        width        : 'auto',
+        height       : 'auto',
+        event        : 'click.editable',
+        onblur       : 'cancel',
+        loadtype     : 'GET',
+        loadtext     : 'Loading...',
+        placeholder  : 'Click to edit',
+        outerclass   : 'editable',
+        loaddata     : {},
+        submitdata   : {},
+        ajaxoptions  : {}
     };
 
 })(jQuery);
