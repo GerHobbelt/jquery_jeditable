@@ -1,0 +1,24 @@
+{
+	"name": "jquery_jeditable",
+	"version": "1.7.3",
+	"description": "Edit in place (inline edit) plugin with possibility to create your own input types.",
+	"authors": [
+        "Mika Tuupola <tuupola@appelsiini.net>",
+    ],
+	"homepage": "http://www.appelsiini.net/projects/jeditable"
+	"keywords": [
+        "inline",
+        "edit",
+        "ui",
+        "form"
+    ],
+	"main": ["jquery.jeditable.min.js"],
+	"repository": {
+		"type": "git",
+		"url": "git://github.com/alexborisov/jquery_jeditable.git"
+	},
+	"dependencies": {
+		"jquery": "~1.7.1"
+	},
+	"private":"true"
+}
