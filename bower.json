@@ -1,6 +1,6 @@
 {
 	"name": "jquery_jeditable",
-	"version": "1.7.3",
+	"version": "1.7.3.1",
 	"description": "Edit in place (inline edit) plugin with possibility to create your own input types.",
 	"authors": [
         "Mika Tuupola <tuupola@appelsiini.net>",
