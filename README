@@ -1,5 +1,10 @@
 h3. Changelog
 
+h4. 1.7.3.1
+* Clean up source tree
+* Deleted obsolete files
+* Add bower support
+
 h4. 1.7.3
 
 * Add support for "jQuery plugin repository":http://plugins.jquery.com/
