@@ -43,7 +43,7 @@
   * @param String  options[loadtype]  Request type for load url. Should be GET or POST.
   * @param String  options[loadtext]  Text to display while loading external content.
   * @param Mixed   options[loaddata]  Extra parameters to pass when fetching content before editing.
-  * @param Mixed   options[data]      Or content given as paramameter. String or function.**
+  * @param Mixed   options[data]      Or content given as parameter. String or function.**
   * @param String  options[indicator] indicator html to show when saving
   * @param String  options[tooltip]   optional tooltip text via title attribute **
   * @param String  options[event]     jQuery event such as 'click' of 'dblclick' **
