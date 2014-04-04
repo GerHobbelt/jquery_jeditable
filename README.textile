@@ -3,6 +3,13 @@ h3. Changelog
 h4. 1.7.3
 
 * Add support for "jQuery plugin repository":http://plugins.jquery.com/
+* Fixed the #4 bug ("tuupola":http://github.com/tuupola)
+* Updated the Autogrow plugin URL ("tuupola":http://github.com/tuupola)
+* Added a jQuery based datepicker ("hitsvilleusa":https://github.com/hitsvilleusa)
+* Added an old autocomplete demo ("tuupola":http://github.com/tuupola)
+* Fixed the height and width setting bug ("nimbleapps":http://github.com/nimbleapps)
+* Merged changes from #99
+* Merged changes from #36
 
 h4. 1.7.2
 
