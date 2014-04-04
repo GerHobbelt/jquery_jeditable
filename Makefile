@@ -1,4 +1,4 @@
-VERSION = 1.7.1
+VERSION = 1.7.3
 SHELL = /bin/sh
 DOWNLOAD = /var/www/www.appelsiini.net/htdocs/download
 JSPACKER = /home/tuupola/bin/jspacker
@@ -32,7 +32,8 @@ latest: jquery.jeditable.js jquery.jeditable.pack.js
 	cp jquery.jeditable.mini.js $(DOWNLOAD)/jquery.jeditable.mini.js
 
 
-.PHONY: wysiwyg
+.PHONY: wysiwyg tests tarball latest minified packed jeditable all
+
 wysiwyg:
 	 cp wysiwyg/jquery.jeditable.wysiwyg.js  $(DOWNLOAD)/jquery.jeditable.wysiwyg.js
 
@@ -40,8 +41,6 @@ tests: jquery.jeditable.js
 	rm examples/lib/jquery.jeditable.js
 	cp jquery.jeditable.js examples/lib/
 
-tarball: examples/index.html
-	rm examples/lib/jquery.jeditable.js
-	cp jquery.jeditable.js examples/lib/
+tarball: tests examples/index.html
 	/usr/local/bin/tar -X ignore.txt -czvf jEditable_examples-$(VERSION).tar.gz examples/*
 	cp jEditable_examples-$(VERSION).tar.gz $(DOWNLOAD)
