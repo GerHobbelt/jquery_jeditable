@@ -100,6 +100,10 @@
         if (settings.tooltip) {
             $(this).attr('title', settings.tooltip);
         }
+	
+        if ($(self).hasClass(settings.activeclass)) {
+            $(self).removeClass(settings.activeclass);
+        }
         
         settings.autowidth  = 'auto' == settings.width;
         settings.autoheight = 'auto' == settings.height;
@@ -148,8 +152,8 @@
                     $(self).removeAttr('title');
                 }
 
-                if (settings.outerclass) {
-                  $(self).addClass(settings.outerclass);
+                if (settings.activeclass) {
+                  $(self).addClass(settings.activeclass);
                 }
 
                 /* Figure out how wide and tall we are, saved width and height. */
@@ -369,8 +373,8 @@
                         }
                     }
 
-                    if ($(self).hasClass(settings.outerclass)) {
-                      $(self).removeClass(settings.outerclass);
+                    if ($(self).hasClass(settings.activeclass)) {
+                      $(self).removeClass(settings.activeclass);
                     }
                     
                     /* Show tooltip again. */
@@ -391,8 +395,8 @@
                         if (!$.trim($(self).html())) {
                             $(self).html(settings.placeholder);
                         }
-                        if ($(self).hasClass(settings.outerclass)) {
-                          $(self).removeClass(settings.outerclass);
+                        if ($(self).hasClass(settings.activeclass)) {
+                          $(self).removeClass(settings.activeclass);
                         }
                         /* Show tooltip again. */
                         if (settings.tooltip) {
@@ -549,7 +553,7 @@
         loadtype     : 'GET',
         loadtext     : 'Loading...',
         placeholder  : 'Click to edit',
-        outerclass   : 'editable',
+        activeclass  : 'editable',
         loaddata     : {},
         submitdata   : {},
         ajaxoptions  : {}
