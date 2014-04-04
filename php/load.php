@@ -6,17 +6,22 @@ require_once 'defaults.php';
 $token    = $_GET['id'] ?  $_GET['id'] : $_POST['id'];
 $renderer = $_GET['renderer'] ?  $_GET['renderer'] : $_POST['renderer'];
 
-$query = sprintf("SELECT value 
-                  FROM config 
-                  WHERE token='%s' 
-                  ORDER BY id DESC
-                  LIMIT 1", 
-                  $token);
+if (!empty($dbh)) {
+    $query = sprintf("SELECT value 
+                      FROM config 
+                      WHERE token='%s' 
+                      ORDER BY id DESC
+                      LIMIT 1", 
+                      $token);
 
-$retval =  $dbh->query($query)->fetchColumn(0);
+    $retval =  $dbh->query($query)->fetchColumn(0);
 
-$retval = trim($retval) ?  $retval : $default[$token];
-$retval = trim($retval) ?  $retval : 'Edit me!';
+    $retval = trim($retval) ?  $retval : $default[$token];
+    $retval = trim($retval) ?  $retval : 'Edit me!';
+} else {
+    $retval = $default[$token];
+    $retval = trim($retval) ?  $retval : 'Edit me!';
+}
 
 if ('textile' == $renderer) {
     require_once './Textile.php';

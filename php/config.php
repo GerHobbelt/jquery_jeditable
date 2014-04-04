@@ -4,14 +4,15 @@ error_reporting(E_ALL ^ E_NOTICE);
 
 try {
     $dbh = new PDO('sqlite:/tmp/editable.sqlite');
+
+    /* Create table for storing example data. */
+    $dbh->exec('
+    CREATE TABLE config (id INTEGER primary key, 
+                         token VARCHAR(255),
+                         value TEXT,
+                         date DATETIME)
+    ');
 } catch(PDOException $e) {
     print $e->getMessage();
+    $dbh = null;
 }
-
-/* Create table for storing example data. */
-$dbh->exec('
-CREATE TABLE config (id INTEGER primary key, 
-                     token VARCHAR(255),
-                     value TEXT,
-                     date DATETIME)
-');
